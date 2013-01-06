@@ -71,7 +71,7 @@
 			brics5: {url: 'http://api.twitter.com/1/trends/23424942.json' , id: '#bricsTrendContent' , msg: '南アフリカ'} ,
 			
 			//next11
-			next111: {url: '' , id: '#next11TrendContent' , msg: '韓国'} ,
+			next111: {url: 'http://api.twitter.com/1/trends/23424868.json' , id: '#next11TrendContent' , msg: '韓国'} ,
 			next112: {url: '' , id: '#next11TrendContent' , msg: 'バングラデシュ'} ,
 			next113: {url: '' , id: '#next11TrendContent' , msg: 'エジプト'} ,
 			next114: {url: 'http://api.twitter.com/1/trends/23424846.json' , id: '#next11TrendContent' , msg: 'インドネシア'} ,
