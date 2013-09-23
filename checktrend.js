@@ -1,9 +1,4 @@
 
-	
-	//**
-	//**  何かありましたら@tattyammまでご連絡お願いします  **
-	// 2012.06.27
-	
 	// Google Analytics設定
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-19734506-5']);

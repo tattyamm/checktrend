@@ -1,11 +1,12 @@
 {
+	"package_path": "http://tattyamm.github.io/checktrend/package.webapp",
 	"name": "CheckTrendJ",
 	"description": "Japan Trend Viewer",
-	"launch_path": "/checktrend/app/index.html",
+	"launch_path": "/index.html",
 	"version" : "1.0",
 	"icons": {
-		"128": "/checktrend/app/images/icon128.png",
-		"60": "/checktrend/app/images/icon60.png"
+		"128": "/images/icon128.png",
+		"60": "/images/icon60.png"
 	},
 
 	"developer": {

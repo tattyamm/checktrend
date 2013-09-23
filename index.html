@@ -4,32 +4,103 @@
 	<title>チェックトレンド Web</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<link rel="apple-touch-icon" href="app/images/icon.png" rel="apple-touch-icon-precomposed">
-	<link rel="icon" type="image/png" href="./app/images/favicon.png">
+	<link rel="apple-touch-icon" href="images/icon.png" rel="apple-touch-icon-precomposed">
+	<link rel="icon" type="image/png" href="./images/favicon.png">
 
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.css">
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.0-alpha.2/jquery.mobile-1.4.0-alpha.2.min.js"></script>
+	<script src="./checktrend.js"></script>
+	<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 <body>
 
 
-<div data-role="page" id="top">
+<!-- 日本 ---------------------------------------------->
+<div data-role="page" id="japanTrend">
 
 	<!-- /header -->
 	<div data-role="header" data-position="fixed">
+		<h1>チェックトレンド</h1>
+		<a href="#info" data-transition="slide" data-icon="info" class="ui-btn-right">Info</a>
+	</div>
+
+	<!-- /content -->
+	<div data-role="content">
+		<p><div id="japanTrendContentTitle">　下のメニューをどれか選択して下さい。
+		</div></p>
+		<div id="japanTrendContent"></div>
+		<br />
+	</div>
+
+	<!-- /footer -->
+	<div data-role="footer" data-position="fixed" data-theme="b" data-id="jaapnTrendFooter">
+		<div data-role="navbar" >
+			<ul>
+				<li><a href="#" data-icon="bars" ; onclick="getData('japan1'); return false">Google</a></li>
+				<li><a href="#" data-icon="bars" ; onclick="getData('japan2'); return false">Yahoo!</a></li>
+				<li><a href="#" data-icon="bars" ; onclick="getData('japan3'); return false">MSN</a></li>
+				<li><a href="#" data-icon="bars" ; onclick="getData('japan4'); return false">Twitter</a></li>
+				<li><a href="#" data-icon="bars" ; onclick="getData('japan5'); return false">Amazon</a></li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
+<!-- アプリ内ブラウザ ---------------------------------------------->
+<div data-role="page" id="browser">
+
+	<!-- /header -->
+	<div data-role="header">
+		<a href="#japanTrend" data-role="button" data-icon="back" data-rel="back" data-transition="slide" data-direction="reverse">戻る</a>
 		<h1>チェックトレンド</h1>
 	</div>
 
 	<!-- /content -->
 	<div data-role="content">
-		<a href="app/index.html" rel="external" data-role="button">Webアプリ版</a>
-		<a href="package/index.html" rel="external" data-role="button">Firefox OS版</a>
-		<a href="https://itunes.apple.com/jp/app/id397153166?mt=8" rel="external" data-role="button">iOS版</a>
-		<a href="https://play.google.com/store/apps/details?id=jp.tattyamm.android.checktrend" rel="external" data-role="button">Android版</a>
-		<a href="https://github.com/tattyamm/ChecktrendWeb" title="tattyamm/ChecktrendWeb" rel="external" data-role="button">githubリポジトリ</a>
+		<iframe src="" id="detailBrowser" width="100%" height="350px" mozbrowser></iframe>
 	</div>
 
+</div>
+
+
+<!-- このサイトの情報 ---------------------------------------------->
+<div data-role="page" id="info">
+
+	<!-- /header -->
+	<div data-role="header">
+		<a href="#japanTrend" data-role="button" data-icon="back" data-rel="back" data-transition="slide" data-direction="reverse">戻る</a>
+		<a href="./menu.html" rel="external" data-icon="info" class="ui-btn-right">Menu</a>
+		<h1>チェックトレンド</h1>
+	</div>
+
+	<!-- /content -->
+	<div data-role="content">	
+		<p>
+			　このサイトは各国の流行キーワードを一気に見るサイトです。<a href="http://itunes.apple.com/jp/app/id397153166?mt=8" rel="external">iPhone版</a>と<a href="https://market.android.com/details?id=jp.tattyamm.android.checktrend">Android版</a>をご用意したので、そちらも合わせてお使い下さい。
+		</p>
+		<p>
+			作者・連絡先；<a href="http://twitter.com/#!/tattyamm" rel="external">Entatsu</a>
+		</p>
+
+		<ul data-role="listview" data-inset="true">
+			<li data-role="list-divider">日本</li>
+			<li><a href="http://www.google.co.jp/m/trends" rel="external">Googleトレンド 急上昇ワード</a></li>
+			<li><a href="http://searchranking.yahoo.co.jp/burst_ranking" rel="external">Yahoo!急上昇ワード</a></li>
+			<li><a href="http://keyword.jp.msn.com/" rel="external">MSN週間急上昇ランキング</a></li>
+			<li><a href="http://twitter.com/" rel="external">twitterトレンド</a></li>
+			<li><a href="http://www.amazon.co.jp/gp/redirect.html?ie=UTF8&location=http%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fbestsellers%2Fbooks%3Fie%3DUTF8%26ref_%3Dzg_bsms_tab%23&tag=iphonect-22&linkCode=ur2&camp=247&creative=7399" rel="external">Amazon 本のベストセラー</a></li>
+		</ul>
+
+		<!-- 広告挿入位置 -->
+		<iframe src="http://rcm-jp.amazon.co.jp/e/cm?t=tattyamm-22&o=9&p=42&l=ur1&category=amazonrotate&f=ifr" width="234" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+	</div>
+
+	<p>
+		<a href="./index.html" data-transition="slide" data-direction="reverse" data-role="button">ホームへ</a>
+	</p>
 
 	<!-- /footer -->
 	<div data-role="footer">

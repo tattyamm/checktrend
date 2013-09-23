@@ -4,7 +4,7 @@
 チェックトレンドのWeb版です。
 
 ##各URL
-* [Web](http://tattyamm.github.io/checktrend/)
+* [Web](http://tattyamm.github.io/checktrend/menu.html)
 * [iOS](http://itunes.apple.com/jp/app/id397153166?mt=8)
 * [Android](https://market.android.com/details?id=jp.tattyamm.android.checktrend)
 * [旧Web](http://checktrendweb.appspot.com/)
