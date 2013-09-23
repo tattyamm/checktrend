@@ -1,7 +1,5 @@
 
 // ホスト型アプリのインストール
-(function(){
-
   function install(ev) {
     ev.preventDefault();
     // マニフェスト URL を定義
@@ -17,10 +15,10 @@
       console.log('インストール失敗、エラー: ' + this.error.name);
      };
   };
+
   // ボタンへの参照を取得し、クリック時に install() を呼び出します
   var button = document.getElementById('install');
   button.addEventListener('click', install, false);
- }
 
 
   function installPackage(ev) {
@@ -39,8 +37,6 @@
      };
   };
   // ボタンへの参照を取得し、クリック時に install() を呼び出します
-  var button = document.getElementById('install');
-  button.addEventListener('click', install, false);
- }
+  var button2 = document.getElementById('installPackage');
+  button2.addEventListener('click', installPackage, false);
 
-)();
