@@ -19,6 +19,11 @@
 		});
 	});
 
+	//fastckick.js
+	$(function() {
+    	FastClick.attach(document.body);
+	});
+
 	// 個別設定
 	$(document).ready(function(){
 		// Google Analytics読込み
